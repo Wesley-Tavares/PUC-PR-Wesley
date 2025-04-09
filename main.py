@@ -9,4 +9,4 @@ def read_root():
 
 @app.get("/teste1")
 def funcao_teste():
-    return {"Verdadeiro": True, "numero_aleatório" : random.randint(0, 1000)}
+    return {"Verdadeiro": True, "numero_aleatório" : random.randint(0, 3000)}
