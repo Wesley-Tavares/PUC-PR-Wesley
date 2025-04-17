@@ -6,7 +6,6 @@ COPY requiriments.txt ./
 
 RUN pip install --no-cache-dir -r requiriments.txt
 
-
 COPY . .
 
 EXPOSE 80
