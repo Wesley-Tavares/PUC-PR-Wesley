@@ -1,12 +1,14 @@
 FROM python:3
 
+WORKDIR /usr/src/app
 
-WORKDIR /code
+COPY requiriments.txt ./
 
-COPY ./requirements.txt /code / requirements.txt
+RUN pip install --no-cache-dir -r requiriments.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requiriments.txt
+
+COPY . .
 
 EXPOSE 80
-COPY . .
 CMD ["fastapi", "run", "main.py", "--port", "80"]
+

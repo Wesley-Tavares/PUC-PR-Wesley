@@ -1,12 +1,32 @@
-from fastapi import FastAPI
 import random
+from fastapi import FastAPI
+from pydantic import BaseModel
+
 app = FastAPI()
 
+class Estudante(BaseModel):
+    name: str
+    curso: str
+    ativo: bool
 
-@app.get("/")
+
+
+@app.get("/helloworld")
 def read_root():
-    return {"Hello": "World"}
+    return {"message": "Hello World"}
 
-@app.get("/teste1")
+@app.get("/teste")
 def funcao_teste():
     return {"Verdadeiro": True, "numero_aleatório" : random.randint(0, 1000)}
+
+@app.post("/estudante/cadastro")
+async def create_estudante(estudante: Estudante):
+    return estudante
+
+@app.put("/estudante/update/{id_estudante}")
+async def update_item(id_estudante: int):
+    return id_estudante > 0
+
+@app.delete("/estudantes/delete/{id_estudante}")
+async def delete_estudante(id_estudante: int):
+    return id_estudante > 0
