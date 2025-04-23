@@ -22,7 +22,6 @@ def teste_funcao_teste():
     assert estudante_teste == result
 
 
-
 def teste_update_estudante_negativo():
     result = update_estudante(-5)
     yield result

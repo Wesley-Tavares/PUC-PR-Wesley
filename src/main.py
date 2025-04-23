@@ -11,7 +11,6 @@ class Estudante(BaseModel):
 
 
 
-
 @app.get("/helloworld")
 def read_root():
     return {"message": "Hello World"}
