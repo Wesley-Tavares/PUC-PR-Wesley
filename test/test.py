@@ -11,7 +11,7 @@ async def test_root():
 async def teste_funcao_teste():
     with patch('random.randint', return_value=12223):
         result = await funcao_teste()
-    assert  result == {"Verdadeiro": True, "num_aleatorio": 12223}
+    assert  result == {"Verdadeiro": True, "numero_aleatório": 12223}
 
 @pytest.mark.asyncio
 async def test_create_estudante():
