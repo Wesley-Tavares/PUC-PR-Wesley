@@ -12,11 +12,11 @@ class Estudante(BaseModel):
 
 
 @app.get("/helloworld")
-def read_root():
+async def read_root():
     return {"message": "Hello World"}
 
 @app.get("/teste")
-def funcao_teste():
+async def funcao_teste():
     return {"Verdadeiro": True, "numero_aleatório" : random.randint(0, 1000)}
 
 @app.post("/estudante/cadastro")
