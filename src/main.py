@@ -24,7 +24,7 @@ async def create_estudante(estudante: Estudante):
     return estudante
 
 @app.put("/estudante/update/{id_estudante}")
-async def update_item(id_estudante: int):
+async def update_estudante(id_estudante: int):
     return id_estudante > 0
 
 @app.delete("/estudantes/delete/{id_estudante}")
