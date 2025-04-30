@@ -49,9 +49,10 @@ async def test_validacao_reservista_aprovado():
     result = await validacao_idade_reservista(19)
     assert result == {"mensagem": "Aprovado"}
 
+
 @pytest.mark.asyncio
 async def test_validacao_reservista():
-    result = validacao_reservista()
+    result = await validacao_reservista()
     assert result == {"mensagem" : "Aprovado"}
 
 @pytest.mark.asyncio

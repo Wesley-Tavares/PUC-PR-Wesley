@@ -41,6 +41,7 @@ async def validacao_idade_reservista(idade: int):
 async def validacao_reservista():
     return {"mensagem" : "Aprovado"}
 
+
 @app.get("/validacao/{peso}")
 async def validacao_peso(peso : int):
     return {"mensagem" : "Avaliação necessária"} if peso > 130 else {"mensagem" : "Peso dentro do limite"}
