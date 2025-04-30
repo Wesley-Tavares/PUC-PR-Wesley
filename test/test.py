@@ -28,6 +28,7 @@ async def teste_update_estudante_negativo():
 async def test_update_estudante_positivo():
     result = await update_estudante(15)
     assert result
+
 @pytest.mark.asyncio
 async def test_delete_estudante_negativo():
     result = await delete_estudante(-5)
@@ -38,5 +39,33 @@ async def test_delete_estudante_positivo():
     result = await delete_estudante(10)
     assert result
 
+@pytest.mark.asyncio
+async def test_validacao_reservista_reprovado():
+    result = await validacao_idade_reservista(16)
+    assert result == {"mensagem": "Reprovado"}
 
+@pytest.mark.asyncio
+async def test_validacao_reservista_aprovado():
+    result = await validacao_idade_reservista(19)
+    assert result == {"mensagem": "Aprovado"}
+
+@pytest.mark.asyncio
+async def test_validacao_reservista():
+    result = validacao_reservista()
+    assert result == {"mensagem" : "Aprovado"}
+
+@pytest.mark.asyncio
+async def test_validacao_peso():
+    result = await validacao_peso(140)
+    assert result == {"mensagem": "Avaliação necessária"}
+
+@pytest.mark.asyncio
+async def test_impar():
+    result = await impar(12)
+    assert result == {"mensagem": "par"}
+
+@pytest.mark.asyncio
+async def test_avaliacao():
+    result = await avaliacao(6)
+    assert result == {"mensagem": "reprovado"}
 
